@@ -1,6 +1,3 @@
-<a name="readme-top"></a>
-
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
 
@@ -25,8 +22,6 @@
 5. Click `Deploy`.  <img width="117" alt="image" src="https://user-images.githubusercontent.com/9706111/234121783-ce28a8cf-ab07-4ba0-bea1-5b6cb5520db5.png">
 6. In your spreadsheet, you will have access to the "CHATGPT" and "GPT3" functions.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## Usage
 
@@ -44,3 +39,4 @@
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/9706111/234122872-5b280aba-1cb0-4ef9-9f0f-aef89fbe2760.png">
 
 
+You can also adjust the `model`, `temperature`, and `max_tokens` within each function call.
