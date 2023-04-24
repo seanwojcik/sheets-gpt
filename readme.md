@@ -14,7 +14,7 @@
 
 ## Setup
 
-1. Get an OpenAI API Key at [[https://example.com](https://platform.openai.com/account/api-keys)]([https://example.com](https://platform.openai.com/account/api-keys))
+1. Get an OpenAI API Key at [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
 2. From a Google Sheet, select `Extensions` --> `Apps Script`
 
 <img width="257" alt="image" src="https://user-images.githubusercontent.com/9706111/234121880-14d6138d-5ebc-4c21-ab73-d0c66a920aa8.png">
