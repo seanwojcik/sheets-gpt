@@ -14,14 +14,14 @@
 1. Get an OpenAI API Key at [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
 2. From a Google Sheet, select `Extensions` --> `Apps Script`
 
-<img width="257" alt="image" src="https://user-images.githubusercontent.com/9706111/234121880-14d6138d-5ebc-4c21-ab73-d0c66a920aa8.png">
+     <img width="257" alt="image" src="https://user-images.githubusercontent.com/9706111/234121880-14d6138d-5ebc-4c21-ab73-d0c66a920aa8.png">
 
 3. Replace the contents of `code.gs` with the contents of the `code.gs` file in this repo.
-4. Replace the first row with your own OpenAI API key.  
+4. Insert your own OpenAI API key in the first line of the file:  `const SECRET_KEY = "";`
      * *Note*: Sharing your API key can compromise the security of your account, application, and data.  Set the appropriate access permissions for your script and sheet to limit who can view and edit them.
-5. Click `Deploy`.  
+5. Click `Deploy`.
 
-<img width="117" alt="image" src="https://user-images.githubusercontent.com/9706111/234121783-ce28a8cf-ab07-4ba0-bea1-5b6cb5520db5.png">
+     <img width="117" alt="image" src="https://user-images.githubusercontent.com/9706111/234121783-ce28a8cf-ab07-4ba0-bea1-5b6cb5520db5.png">
 
 6. In your spreadsheet, you will have access to the "CHATGPT" and "GPT3" functions.
 
@@ -43,3 +43,5 @@
 
 
 You can also adjust the `model`, `temperature`, and `max_tokens` within each function call.
+
+See the [OpenAI API documentation](https://platform.openai.com/docs/api-reference/chat/create) for information about formatting requests and other available parameters.
