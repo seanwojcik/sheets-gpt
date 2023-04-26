@@ -19,7 +19,7 @@
 3. Replace the contents of `code.gs` with the contents of the `code.gs` file in this repo.
 4. Insert your own OpenAI API key in the first line of the file:  `const SECRET_KEY = "";`
      * *Note*: Sharing your API key can compromise the security of your account, application, and data.  Set the appropriate access permissions for your script and sheet to limit who can view and edit them.
-5. Click `Save`.
+5. Click the `Save project` icon.
 
      <img width="104" alt="image" src="https://user-images.githubusercontent.com/9706111/234636153-b2554dd4-5be3-4744-8441-8964cb8994eb.png">
 
