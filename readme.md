@@ -19,9 +19,9 @@
 3. Replace the contents of `code.gs` with the contents of the `code.gs` file in this repo.
 4. Insert your own OpenAI API key in the first line of the file:  `const SECRET_KEY = "";`
      * *Note*: Sharing your API key can compromise the security of your account, application, and data.  Set the appropriate access permissions for your script and sheet to limit who can view and edit them.
-5. Click `Deploy`.
+5. Click `Save`.
 
-     <img width="117" alt="image" src="https://user-images.githubusercontent.com/9706111/234121783-ce28a8cf-ab07-4ba0-bea1-5b6cb5520db5.png">
+     <img width="104" alt="image" src="https://user-images.githubusercontent.com/9706111/234636153-b2554dd4-5be3-4744-8441-8964cb8994eb.png">
 
 6. In your spreadsheet, you will have access to the "CHATGPT" and "GPT3" functions.
 
