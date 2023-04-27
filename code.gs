@@ -69,3 +69,43 @@ function CHATGPT(messages, model="gpt-3.5-turbo", temperature=0.0, max_tokens=10
   
   return data.choices[0].message.content.trim();
 }
+
+/**
+ * A custom function for using GPT4 in Google Sheets
+ * @param {string} message The string representing the user's message to GPT4
+ * @param {string} model The GPT4 model to use (gpt-4 is the default)
+ * @param {number} temperature The sampling temperature to use (0.0 is the default)
+ * @param {number} max_tokens The maximum number of tokens to return (200 is the default)
+ * @return {string} The generated text
+ * @customfunction
+ */
+function GPT4(message, model="gpt-4", temperature=0.0, max_tokens=200) {
+  var apiKey = SECRET_KEY;
+  var endpoint = "https://api.openai.com/v1/chat/completions";
+
+  var messages = [
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": message}
+  ]
+  var payload = {
+    model: model,
+    messages: messages,
+    max_tokens: max_tokens,
+    temperature: temperature
+  };
+
+  var options = {
+    method: "post",
+    contentType: "application/json",
+    payload: JSON.stringify(payload),
+    headers: {
+      "Authorization": "Bearer " + apiKey
+    }
+  };
+
+  var response = UrlFetchApp.fetch(endpoint, options);
+  var json = response.getContentText();
+  var data = JSON.parse(json);
+  
+  return data.choices[0].message.content.trim();
+}
