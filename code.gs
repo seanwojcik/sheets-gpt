@@ -1,4 +1,34 @@
-const SECRET_KEY = "";
+const OPENAI_KEY = "";
+const ANTHROPIC_KEY = "";
+
+/**
+ * A custom function for using Anthropic's Claude model in Google Sheets
+ * @param {string} prompt The text you want Claude to complete
+ * @param {string} model The Anthropic model to use (claude-v1.3 is the default)
+ * @param {number} max_tokens The maximum number of tokens to sample (1024 is the default)
+ * @return {string} The generated text
+ * @customfunction
+ */
+function CLAUDE(prompt, model="claude-v1.3", max_tokens=1024) {
+  var endpoint = "https://api.anthropic.com/v1/complete";
+  var payload = {
+    "model":model,
+    "max_tokens_to_sample":max_tokens,
+    "stop_sequences":["\n\nHuman:"],
+    "prompt":"\n\nHuman: " + prompt + "\n\nAssistant: ",
+    "stream":false
+  };
+  var options = {
+    method: "post",
+    contentType: "application/json",
+    payload: JSON.stringify(payload),
+    headers: {"x-api-key": ANTHROPIC_KEY}
+  };
+  var response = UrlFetchApp.fetch(endpoint, options);
+  var json = response.getContentText();
+  var data = JSON.parse(json);
+  return data.completion.trim();
+}
 
 /**
  * A custom function for using GPT-3 in Google Sheets
@@ -10,7 +40,6 @@ const SECRET_KEY = "";
  * @customfunction
  */
 function GPT3(prompt, model="text-davinci-003", temperature=0.4, max_tokens=100) {
-  var apiKey = SECRET_KEY;
   var endpoint = "https://api.openai.com/v1/completions";
   var payload = {
     model: model,
@@ -18,20 +47,17 @@ function GPT3(prompt, model="text-davinci-003", temperature=0.4, max_tokens=100)
     max_tokens: max_tokens,
     temperature: temperature
   };
-  
   var options = {
     method: "post",
     contentType: "application/json",
     payload: JSON.stringify(payload),
     headers: {
-      "Authorization": "Bearer " + apiKey
+      "Authorization": "Bearer " + OPENAI_KEY
     }
   };
-  
   var response = UrlFetchApp.fetch(endpoint, options);
   var json = response.getContentText();
   var data = JSON.parse(json);
-  
   return data.choices[0].text.trim();
 }
 
@@ -45,7 +71,6 @@ function GPT3(prompt, model="text-davinci-003", temperature=0.4, max_tokens=100)
  * @customfunction
  */
 function CHATGPT(messages, model="gpt-3.5-turbo", temperature=0.0, max_tokens=100) {
-  var apiKey = SECRET_KEY;
   var endpoint = "https://api.openai.com/v1/chat/completions";
   var payload = {
     model: model,
@@ -53,20 +78,17 @@ function CHATGPT(messages, model="gpt-3.5-turbo", temperature=0.0, max_tokens=10
     max_tokens: max_tokens,
     temperature: temperature
   };
-
   var options = {
     method: "post",
     contentType: "application/json",
     payload: JSON.stringify(payload),
     headers: {
-      "Authorization": "Bearer " + apiKey
+      "Authorization": "Bearer " + OPENAI_KEY
     }
   };
-
   var response = UrlFetchApp.fetch(endpoint, options);
   var json = response.getContentText();
   var data = JSON.parse(json);
-  
   return data.choices[0].message.content.trim();
 }
 
@@ -80,9 +102,7 @@ function CHATGPT(messages, model="gpt-3.5-turbo", temperature=0.0, max_tokens=10
  * @customfunction
  */
 function GPT4(message, model="gpt-4", temperature=0.0, max_tokens=200) {
-  var apiKey = SECRET_KEY;
   var endpoint = "https://api.openai.com/v1/chat/completions";
-
   var messages = [
     {"role": "system", "content": "You are a helpful assistant."},
     {"role": "user", "content": message}
@@ -93,19 +113,16 @@ function GPT4(message, model="gpt-4", temperature=0.0, max_tokens=200) {
     max_tokens: max_tokens,
     temperature: temperature
   };
-
   var options = {
     method: "post",
     contentType: "application/json",
     payload: JSON.stringify(payload),
     headers: {
-      "Authorization": "Bearer " + apiKey
+      "Authorization": "Bearer " + OPENAI_KEY
     }
   };
-
   var response = UrlFetchApp.fetch(endpoint, options);
   var json = response.getContentText();
   var data = JSON.parse(json);
-  
   return data.choices[0].message.content.trim();
 }
