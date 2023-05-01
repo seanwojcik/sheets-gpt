@@ -11,19 +11,21 @@
 
 ## Setup
 
-1. Get an OpenAI API Key at [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
+1. Get API keys from OpenAI and/or Anthropic:
+    * OpenAI API Keys: [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
+    * Anthropic API Keys: [https://console.anthropic.com/account/keys]
 2. From a Google Sheet, select `Extensions` --> `Apps Script`
 
      <img width="257" alt="image" src="https://user-images.githubusercontent.com/9706111/234121880-14d6138d-5ebc-4c21-ab73-d0c66a920aa8.png">
 
 3. Replace the contents of `code.gs` with the contents of the `code.gs` file in this repo.
-4. Insert your own OpenAI API key in the first line of the file:  `const SECRET_KEY = "";`
+4. Insert your own API keys as the values for either or both of the first two line of the file: `OPENAI_KEY` and `ANTHOPIC_KEY`
      * *Note*: Sharing your API key can compromise the security of your account, application, and data.  Set the appropriate access permissions for your script and sheet to limit who can view and edit them.
 5. Click the `Save project` icon.
 
      <img width="104" alt="image" src="https://user-images.githubusercontent.com/9706111/234636153-b2554dd4-5be3-4744-8441-8964cb8994eb.png">
 
-6. In your spreadsheet, you will have access to the "CHATGPT" and "GPT3" functions.
+6. In your spreadsheet, you will have access to the "GPT3", "GPT35", "CHATGPT", "GPT4", and "CLAUDE" functions.
 
 
 ## Usage
