@@ -4,7 +4,7 @@
 <h3 align="center">Sheets GPT</h3>
 
   <p align="center">
-    An Apps Script Extension that adds the CHATGPT() and GPT3() functions to Google Sheets.
+    An Apps Script Extension that adds the `GPT3()`, `GPT35`, `CHATGPT()`, `GPT4()`, and `CLAUDE()` functions to Google Sheets.
   </p>
 </div>
 
@@ -44,6 +44,6 @@
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/9706111/234122872-5b280aba-1cb0-4ef9-9f0f-aef89fbe2760.png">
 
 
-You can also adjust the `model`, `temperature`, and `max_tokens` within each function call.
+Note that `CHATGPT()` differs from `GPT35` in that the `CHATGPT()` function accepts a JSON-formatted array of system, user, and assistant messages.  All other functions accept a plain text string as the prompt.
 
-See the [OpenAI API documentation](https://platform.openai.com/docs/api-reference/chat/create) for information about formatting requests and other available parameters.
+You can also adjust the `model`, `temperature`, and `max_tokens` within each OpenAI function call.  See the API documentation from [OpenAI](https://platform.openai.com/docs/api-reference/chat/create) and [Anthropic](https://console.anthropic.com/docs/api) for information about formatting requests and other available parameters.
