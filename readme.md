@@ -13,7 +13,7 @@
 
 1. Get API keys from OpenAI and/or Anthropic:
     * OpenAI API Keys: [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
-    * Anthropic API Keys: [https://console.anthropic.com/account/keys]
+    * Anthropic API Keys: [https://console.anthropic.com/account/keys](https://console.anthropic.com/account/keys)
 2. From a Google Sheet, select `Extensions` --> `Apps Script`
 
      <img width="257" alt="image" src="https://user-images.githubusercontent.com/9706111/234121880-14d6138d-5ebc-4c21-ab73-d0c66a920aa8.png">
@@ -44,6 +44,6 @@
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/9706111/234122872-5b280aba-1cb0-4ef9-9f0f-aef89fbe2760.png">
 
 
-Note that `CHATGPT()` differs from `GPT35` in that the `CHATGPT()` function accepts a JSON-formatted array of system, user, and assistant messages.  All other functions accept a plain text string as the prompt.
+Note that `CHATGPT()` differs from the other GPT functions (including `GPT35()`) in that the `CHATGPT()` function accepts a JSON-formatted array of system, user, and assistant messages.  All other GPT functions accept a plain text string as the prompt.
 
 You can also adjust the `model`, `temperature`, and `max_tokens` within each OpenAI function call.  See the API documentation from [OpenAI](https://platform.openai.com/docs/api-reference/chat/create) and [Anthropic](https://console.anthropic.com/docs/api) for information about formatting requests and other available parameters.
