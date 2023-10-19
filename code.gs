@@ -22,7 +22,7 @@ function CLAUDE(prompt, model="claude-v1.3", max_tokens=1024) {
     method: "post",
     contentType: "application/json",
     payload: JSON.stringify(payload),
-    headers: {"x-api-key": ANTHROPIC_KEY}
+    headers: {"x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01"}
   };
   var response = UrlFetchApp.fetch(endpoint, options);
   var json = response.getContentText();
